@@ -23,7 +23,7 @@
 
 <p align="center">
     <a href="https://developer.apple.com/swift/" target="_blank">
-        <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.1">
+        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift 4.2">
     </a>
     <a href="https://developer.apple.com/swift/" target="_blank">
         <img src="https://img.shields.io/badge/Platforms-OS%20X%20%7C%20Linux%20-lightgray.svg?style=flat" alt="Platforms OS X | Linux">
@@ -51,7 +51,7 @@ This package builds with Swift Package Manager and is part of the [Perfect](http
 
 #### Swift Version
 
-Swift 4.0+
+Swift 4.2+
 
 #### macOS
 
@@ -71,7 +71,7 @@ Add dependencies to your Package.swift
 
 ``` swift
 .package(url: "https://github.com/RockfordWei/Perfect-PCRE2.git", 
-	from: "3.0.0")
+	from: "3.1.0")
 
 // on target section:
 .target(
