@@ -1,0 +1,4 @@
+module pcre2api [system] {
+  header "pcre2api.h"
+  export *
+}

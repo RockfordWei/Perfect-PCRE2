@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:4.2
 
 import PackageDescription
 
@@ -10,12 +10,18 @@ let package = Package(
             targets: ["PerfectPCRE2"]),
     ],
     dependencies: [
-      .package(url: "https://github.com/RockfordWei/pcre2api.git", from: "1.0.0"),
     ],
     targets: [
+        .systemLibrary(name: "pcre2api",
+            pkgConfig: "libpcre2-8",
+            providers: [
+                .apt(["libpcre2-dev"]),
+                .brew(["pcre2"])
+            ]
+        ),
         .target(
             name: "PerfectPCRE2",
-            dependencies: []),
+            dependencies: ["pcre2api"]),
         .testTarget(
             name: "PerfectPCRE2Tests",
             dependencies: ["PerfectPCRE2"]),
