@@ -43,6 +43,8 @@
 
 This project provides an easy solution to extract captured groups from a string by a PCRE2 compatible regular expression.
 
+This repo is a fork from the original and probably ought not be trusted at the moment.
+
 This package builds with Swift Package Manager and is part of the [Perfect](https://github.com/PerfectlySoft/Perfect) project but can also be used as an independent module.
 
 ## Quick Start
@@ -51,7 +53,7 @@ This package builds with Swift Package Manager and is part of the [Perfect](http
 
 #### Swift Version
 
-Swift 4.2+
+Swift 5.3+
 
 #### macOS
 
@@ -70,8 +72,8 @@ $ sudo apt-get install libpcre2-dev
 Add dependencies to your Package.swift
 
 ``` swift
-.package(url: "https://github.com/RockfordWei/Perfect-PCRE2.git", 
-	from: "3.1.0")
+.package(url: "https://github.com/MrTheSaw/Perfect-PCRE2.git", 
+	from: "3.1.1")
 
 // on target section:
 .target(
