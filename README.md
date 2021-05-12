@@ -49,6 +49,7 @@ Add the following header to your swift source code:
 ``` swift
 import PerfectPCRE2
 ```
+For swift tools 5.3, it also seems that you need to add the libpcre2-8 library to Frameworks and Libraries, probably from something like "/usr/local/Cellar/pcre2/10.36/lib", and make sure it's set to Embed and Sign. 
 
 ### Simple Usage
 
