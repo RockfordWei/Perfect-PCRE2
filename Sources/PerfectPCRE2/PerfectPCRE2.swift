@@ -222,8 +222,8 @@ public class PCRE2 {
       }
       let array = Array(UnsafeBufferPointer<Int>(start: ovector, count: Int(rc) * 2))
       for i in 0..<Int(rc) {
-        let start = String.Index(encodedOffset: array[i * 2])
-        let end = String.Index(encodedOffset: array[i * 2 + 1])
+        let start = String.Index(utf16Offset: array[i * 2], in: subject)
+        let end = String.Index(utf16Offset: array[i * 2 + 1], in: subject)
         offset = array[i * 2 + 1] + 1
         range.append(start..<end)
       }
@@ -253,7 +253,7 @@ public extension String {
   /// - parameter optionsOfMatch: the options to apply in the pattern match
   /// - returns: array of matched substrings
   /// - throws: Exception
-  public func pcre2Match(pattern: String, optionsOfPattern: [PCRE2.OptionPattern] = [.UTF], optionsOfMatch: [PCRE2.OptionMatch] = []) throws -> [[String]] {
+  func pcre2Match(pattern: String, optionsOfPattern: [PCRE2.OptionPattern] = [.UTF], optionsOfMatch: [PCRE2.OptionMatch] = []) throws -> [[String]] {
     let re = try PCRE2(pattern: pattern, options: optionsOfPattern)
     let ranges = try re.match(self, options: optionsOfMatch)
     return ranges.map { $0.map { String(self[$0]) } }
